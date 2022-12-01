@@ -1,24 +1,25 @@
-using System.Collections.ObjectModel;
+using PaymentContext.Domain.ValueObjects;
+using PaymentContext.Shared.Entities;
+
 namespace PaymentContext.Domain.Entities;
 
-public class Student
+public class Student : EntityBase
 {
     private IList<Subscription> _subscripotions;
 
-    public Student(string firstName, string lastName, string document, string email)
+    public Student(Name name, Document document, Email email, Address address)
     {
-        FirstName = firstName;
-        LastName = lastName;
+        Name = name;
         Document = document;
         Email = email;
+        Address = address;
         _subscripotions = new List<Subscription>();
     }
 
-    public string FirstName { get; private set; } = string.Empty;
-    public string LastName { get; private set; } = string.Empty;
-    public string Document { get; private set; } = string.Empty;
-    public string Email { get; private set; } = string.Empty;
-    public string Address { get; private set; } = string.Empty;
+    public Name Name { get; private set; }
+    public Document Document { get; private set; }
+    public Email Email { get; private set; }
+    public Address Address { get; private set; }
 
     public IReadOnlyCollection<Subscription> Subscriptions => _subscripotions.ToArray();
 

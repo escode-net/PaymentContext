@@ -11,8 +11,7 @@ public class StudentTests
         var subscription = new Subscription(null);
         var student = new Student
                             (
-                                "Edson",
-                                "Santos",
+                                "Edson Santos",
                                 "123",
                                 "edson.santos@escode.net"
                             );
