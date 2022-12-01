@@ -8,6 +8,7 @@ public class StudentTests
     [TestMethod]
     public void StudentTest()
     {
+        var subscription = new Subscription(null);
         var student = new Student
                             (
                                 "Edson",
@@ -15,5 +16,6 @@ public class StudentTests
                                 "123",
                                 "edson.santos@escode.net"
                             );
+        student.AddSubscription(subscription);
     }
 }
