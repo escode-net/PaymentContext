@@ -14,6 +14,8 @@ public class Student : EntityBase
         Email = email;
         Address = address;
         _subscripotions = new List<Subscription>();
+
+        AddNotifications(name, document, email, address);
     }
 
     public Name Name { get; private set; }
@@ -25,9 +27,18 @@ public class Student : EntityBase
 
     public void AddSubscription(Subscription subscription)
     {
-        foreach (var sub in Subscriptions)
-            sub.Inactivate();
+        var hasSubscriptionActive = false;
 
-        _subscripotions.Add(subscription);
+        foreach (var sub in _subscripotions)
+        {
+            if (sub.Active)
+                hasSubscriptionActive = true;
+        }
+
+        if (!hasSubscriptionActive)
+            _subscripotions.Add(subscription);
+
+        if (hasSubscriptionActive)
+            AddNotification(nameof(Student.Subscriptions), "Você já tem uma assiantura ativa!");
     }
 }

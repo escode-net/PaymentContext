@@ -9,12 +9,12 @@ public class StudentTests
     public void StudentTest()
     {
         var subscription = new Subscription(null);
-        var student = new Student
-                            (
-                                "Edson Santos",
-                                "123",
-                                "edson.santos@escode.net"
-                            );
-        student.AddSubscription(subscription);
+        // var student = new Student
+        //                     (
+        //                         "Edson Santos",
+        //                         "123",
+        //                         "edson.santos@escode.net"
+        //                     );
+        // student.AddSubscription(subscription);
     }
 }

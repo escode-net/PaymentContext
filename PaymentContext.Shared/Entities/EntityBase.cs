@@ -1,6 +1,8 @@
+using Flunt.Notifications;
+
 namespace PaymentContext.Shared.Entities;
 
-public class EntityBase
+public class EntityBase : Notifiable
 {
     public EntityBase()
     {
